@@ -3,7 +3,7 @@ var path = require("path");
 // var friends = require("../app/data/friends");
 
 var app = express();
-var PORT = 3040;
+var PORT = process.env.PORT || 3040;
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
