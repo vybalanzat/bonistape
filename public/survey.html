@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Friends Survey!</title>
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+    <form>
+            <div class="jumbotron">
+                    <h1 class="display-4">Friend Finder</h1>
+                    <hr class="my-4">
+            </div>
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="name" class="form-control" id="name" placeholder="John Smith">
+        </div>
+        <div class="form-group">
+                <label for="q1">Q1</label>
+                <select class="form-control" id="ans1">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                </select>
+
+        <div class="form-group">
+                <label for="q3">Q2</label>
+                <select class="form-control" id="ans2">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+            </select>
+        <div class="form-group">
+                <label for="q3">Q3</label>
+                <select class="form-control" id="ans3">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+            </select>   
+        <div class="form-group">
+                <label for="q4">Q4</label>
+                <select class="form-control" id="ans4">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+            </select>
+
+        <div class="form-group">
+                <label for="q5">Q5</label>
+                <select class="form-control" id="ans5">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+            </select>
+         <br>
+        <div class="text-right">
+            <button type="submit" class="btn btn-primary btn-md" id="add-btn"><span class="fa fa-fire"></span>Submit</button>
+          </div>
+
+
+<script type="text/javascript">
+$("#add-btn").on("click", function(event){
+   
+    event.preventDefault();
+    var newFriend = {
+        name: $("#name").val().trim(),
+        scores: [
+            $("#ans1").val().trim(),
+            $("#ans2").val().trim(),
+            $("#ans3").val().trim(),
+            $("#ans4").val().trim(),
+            $("#ans5").val().trim(),
+        ]
+    };
+
+    $.post("/api/friends/compare", newFriend).then(function(data){
+        
+    console.log(data);
+        alert("You're most compatible with " + data);
+
+})
+})
+
+// $.post("api/friends", newFriend).then(function(data){
+//     console.log("survey.html", data);
+//     alert("Survey Submitted!");
+  
+// });
+
+
+
+
+
+</script>
+</body>
+</html>
