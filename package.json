@@ -12,5 +12,8 @@
     "url": "git+https://github.com/vybalanzat/bonistape.git"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
