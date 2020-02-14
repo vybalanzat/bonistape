@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "\\"
+    "url": "git+https://github.com/vybalanzat/bonistape.git"
   },
   "author": "",
   "license": "ISC"
