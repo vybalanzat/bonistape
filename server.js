@@ -9,11 +9,11 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 var friends = [
-  {
-    routeName: "josh",
-    name: "josh",
-    scores: [1, 2, 3, 4, 5]
-  },
+  //   {
+  //     routeName: "josh",
+  //     name: "josh",
+  //     scores: [1, 2, 3, 4, 5]
+  //   },
   {
     routeName: "jessah",
     name: "jessah",
@@ -73,6 +73,7 @@ app.post("/api/friends/compare", function(req, res) {
     if (matchedlDiff === 0) {
       matchedlDiff = totalDiff;
       matchedFriend = friends[i].name;
+      console.log(matchedFriend);
     }
     if (totalDiff <= matchedlDiff) {
       matchedFriend = friends[i].name;
