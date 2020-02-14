@@ -1,0 +1,24 @@
+{
+  "name": "bonistape",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vybalanzat/bonistape.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vybalanzat/bonistape/issues"
+  },
+  "homepage": "https://github.com/vybalanzat/bonistape#readme"
+}
